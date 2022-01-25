@@ -98,7 +98,15 @@ rclc_executor_t* ScicobotRosMotor::get_rclc_executor()
 	
 	return &executorMotor;
 }
-
+rcl_subscription_t* ScicobotRosMotor::get_rcl_subscriber()
+{
+	#if SCICOBOT_ROS_MOTOR_DEBUG == 1
+		debugObj.DEBUG("Position of subscriber is: "); 
+		debugObj.DEBUGLN(&subscriberMotor); 
+	#endif
+	
+	return &subscriberMotor;
+}
 
 
 

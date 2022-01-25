@@ -32,7 +32,7 @@
 #ifndef SCICOBOT_ROS_MOTOR_H
 #define SCICOBOT_ROS_MOTOR_H
 
-#include <ros_init/scicobot_ros_init.h>
+#include <scicobot_ros_init.h>
 #include <rclc/executor.h>
 #include <geometry_msgs/msg/twist.h>
 #include <rcl/rcl.h>
@@ -52,6 +52,7 @@ class ScicobotRosMotor
 	void initRosMotorSubscriber(ScicobotRos* scicobotRos, void (*subscriberMotorCallback)(const void *));
 	
 	rclc_executor_t* get_rclc_executor();
+	rcl_subscription_t* get_rcl_subscriber();
 		
 	private:
 	
